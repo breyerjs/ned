@@ -1,0 +1,182 @@
+{
+    "food": [
+        {
+            "type": "side",
+            "name": "Rice Casserole",
+            "quick": true,
+            "ingredients": [
+                {
+                    "name": "Uncle Ben's converted rice",
+                    "amt": "1 cup"
+                },
+                {
+                    "name": "Beef consommé",
+                    "amt": "1 can"
+                },
+                {
+                    "name": "French onion soup",
+                    "amt": "1 can"
+                },
+                {
+                    "name": "Margarine",
+                    "amt": "0.75 stick"
+                }
+            ],
+            "directions": [
+                "Combine all ingredients in a covered casserole dish.",
+                "Bake for one hour."
+            ],
+            "notes": "Don’t get fancy. Uncle Ben’s is the only rice that works for this. Also, don’t use butter or oil; it has to be margarine. This is the world’s most forgiving recipe. If you overbake it—no problem.  You can refrigerate it or freeze it and reheat."
+        },
+        {
+            "type": "main",
+            "name": "Roast Beef",
+            "quick": false,
+            "ingredients": [
+                {
+                    "name": "Bone-in rib roast (also called 'semi-boneless",
+                    "amt": "1"
+                },
+                {
+                    "name": "Dale's steak sauce",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Garlic powder",
+                    "amt": "To taste"
+                }
+            ],
+            "directions": [
+                "Preheat the oven to 375.",
+                "Season the roast all over with Dales and garlic powder.",
+                "Roast for one hour. Turn off the oven and leave the roast in, with the oven door closed, for at least three hours.", 
+                "Turn the oven back on to 375 for 40 minutes (35 minutes if it is a small roast).",
+                "Slice and serve."
+            ],
+            "notes": "One rib will serve two people. So—two ribs for four people, and so on. You need to allow at least three hours between cookings, but it can wait all day. Goes well with horseradish sauce (mix prepared horseradish and sour cream—amounts depend on desired flavor). This will yield a lot of fat in the pan. Unlike many meats, the pan drippings from this roast beef are not particularly good. To clean up—either drain off into a can or something you can throw away, or wait until it congeals and dispose of it then. This will also work with a boneless roast, but is better with a bone-in roast because the bone adds a lot of flavor."
+        },
+        {
+            "type": "main",
+            "name": "Filet Mignon",
+            "quick": false,
+            "ingredients": [
+                {
+                    "name": "Whole beef tenderloin",
+                    "amt": "1"
+                },
+                {
+                    "name": "Soy sauce",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Fresh ground pepper",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Lemon",
+                    "amt": "To taste"
+                }
+            ],
+            "directions": [
+                "Put the tenderloin in a glass pan (pyrex) and pour soy sauce over it. Squeeze the juice of the lemon over it and grind pepper all over. Slice the lemon and lay the slices over the top.",
+                "Marinate in the refrigerator most of the day, turning over occasionally and moving the lemon slices to the top.",
+                "About an hour before cooking, take the meat out of the refrigerator and bring to room temperature. This is very important. If you don’t do this, you will throw off the cooking time.",
+                "Preheat oven to 450.",
+                "Drain and discard the marinade and lemons.",
+                "Bake at 450 for 30 minutes."
+            ],
+            "notes": "This is very rare at 20 minutes (which is what the original recipe called for). I usually bake for 30 minutes. Allow ½ pound of meat per person. Remember that filet is all edible (no bone), so you can calculate pretty accurately. Low sodium soy sauce works just as well as regular soy sauce, and is better for you. The average whole tenderloin is 4-5 lbs. If you want to feed a smaller group, you have two choices. You can buy a whole one and freeze part of it for later use. Or you can buy a center cut filet, which is pretty much what it sounds like—the center portion of a whole filet—about 2 lbs. They generally charge more per pound for the center cut, but you don’t wind up with a lot more meat than you need. When I bake this, I move it to a real roasting pan. I don’t bake it in the pyrex. Serve this with horseradish sauce. Mix prepared horseradish and sour cream. Amounts of each depend on taste preference."
+        },
+        {
+            "type": "main",
+            "name": "Boeuf Bourgignon",
+            "quick": false,
+            "ingredients": [
+                {
+                    "name": "Diced bacon",
+                    "amt": "0.25 cup"
+                },
+                {
+                    "name": "Flour",
+                    "amt": "0.25 cup"
+                },
+                {
+                    "name": "Paprika",
+                    "amt": "1 tsp"
+                },
+                {
+                    "name": "Salt",
+                    "amt": "0.5 or 1 tsp"
+                },
+                {
+                    "name": "Lean chuck beef, cubed",
+                    "amt": "3 lbs"
+                },
+                {
+                    "name": "Butter",
+                    "amt": "6 tbs"
+                },
+                {
+                    "name": "chopped carrots",
+                    "amt": "0.33 cups"
+                },
+                {
+                    "name": "Onion, chopped",
+                    "amt": "1"
+                },
+                {
+                    "name": "Clove garlic, crushed",
+                    "amt": "1"
+                },
+                {
+                    "name": "Thyme",
+                    "amt": "0.25 tsp"
+                },
+                {
+                    "name": "Chopped parslet",
+                    "amt": "0.25 cups"
+                },
+                {
+                    "name": "Bay leaf",
+                    "amt": "1"
+                },
+                {
+                    "name": "Tobasco sauce",
+                    "amt": "0.5 tsp"
+                },
+                {
+                    "name": "Beef boullion (ie. canned beef broth)",
+                    "amt": "About 2 cups"
+                },
+                {
+                    "name": "Dry red wine",
+                    "amt": "1 cup"
+                },
+                {
+                    "name": "Pearl onions (peeled)",
+                    "amt": "8"
+                },
+                {
+                    "name": "Small new potatoes, scrubbed",
+                    "amt": "8"
+                },
+                {
+                    "name": "Mushrooms",
+                    "amt": "0.5 lbs"
+                }
+            ],
+            "directions": [
+                "In a large pot (Dutch oven) cook the bacon until crisp and remove and reserve. Leave the bacon grease in the pot.",
+                "In a bowl, combine the flour paprika and a little salt. Roll the beef cubes and coat in the flour mixture.",
+                "To the bacon grease, add 4 tbs. (or more) of the butter and melt over medium-high heat. Add the beef cubes and brown all over. (It helps to use tongs to turn them.) This takes a long time. Do it in batches and remove to a plate.",
+                "Add the chopped carrot, chopped onion and garlic and saute until the onion is limp.",
+                "Add the thyme, parsley, bay leaf, tabasco, bacon, bouiloon and wine. Put the meat back in the pot and simmer,. covered for about two hours. Add more bouillon if you need to to keep the meat covered. Stir occasionally.",
+                "Add the small onions, carrots and potatoes. Cook until the potatoes are fork tender--up to an hour.",
+                "In a small pan, saute the mushrooms in the rest of the butter (or more--mushrooms absorb a lot of butter) and add to the stew and continue cooking until everything is very tender.",
+                "Serve over noodles, with a salad or vegetable.",
+                "Don't get too hung up on precise measurements. This is a stew."
+            ],
+            "notes": "Warning--this is the longest cooking dish I make. It takes me up to 6 hours, when all is said and done. That's why I frequently make the short ribs, which take a lot less (about half) the time and effort. Both recipes follow."
+        }
+    ]
+}
