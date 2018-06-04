@@ -61,6 +61,8 @@ def handle_command(command, channel):
     except Exception as e:
         print(e)
         response = 'Great Scott! I seem to have encountered an error :('
+        send_response(channel, response)
+
 
 def send_response(channel, response):
     # Sends the response back to the channel

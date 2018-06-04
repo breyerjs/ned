@@ -177,6 +177,60 @@
                 "Don't get too hung up on precise measurements. This is a stew."
             ],
             "notes": "Warning--this is the longest cooking dish I make. It takes me up to 6 hours, when all is said and done. That's why I frequently make the short ribs, which take a lot less (about half) the time and effort. Both recipes follow."
+        },
+        {
+            "type": "main",
+            "name": "Beef Short Ribs",
+            "quick": false,
+            "ingredients": [
+                {
+                    "name": "Beef short ribs (bone-in or boneless--both work)",
+                    "amt": "3 lbs"
+                },
+                {
+                    "name": "Carrots, cut into 1/2 inch pieces (I use peeled baby carrots)",
+                    "amt": "2"
+                },
+                {
+                    "name": "Pearl onions, peeled ",
+                    "amt": "4 oz"
+                },
+                {
+                    "name": "Pancetta",
+                    "amt": "2 oz"
+                },
+                {
+                    "name": "Butter",
+                    "amt": "2 tbs"
+                },
+                {
+                    "name": "Vegetable oil",
+                    "amt": "1 tbs"
+                },
+                {
+                    "name": "Salt",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Fresh ground black pepper",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Red wine",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Beef or chicken broth",
+                    "amt": "0.5 cups"
+                }
+            ],
+            "directions": [
+                "Add the carrots, onions and pancetta to the pan and saute a few minutes until the onions and carrots begin to brown/caramelize.", 
+                "Add the wine and broth and let bubble for a few minutes to allow the alcohol to evaporate.",
+                "Put the ribs back in the pan, with the lid slightly askew. Lower the heat to a simmer and simmer for about 2-3 hours, turning every 20 minutes or so, until the ribs are fall-off-the-bone tender.",
+                "Drain and discard the fat, but keep the solids (a combination of cooked down carrots and onions and pan drippings) to put over the ribs."   
+            ],
+            "notes": "Serve with baked potato (or roasted potatoes) and vegetable/salad."
         }
     ]
 }
