@@ -1,5 +1,5 @@
-from recipe.recipe import Recipe
+from hello.hello import Hello
 
-commands = "recipe random".split()
+commands = "hi there my friend".split()
 
-print(Recipe(commands).process_command())
+print(Hello(commands).process_command())

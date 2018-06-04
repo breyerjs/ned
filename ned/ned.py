@@ -3,6 +3,7 @@ import time
 import re
 import json
 from recipe.recipe import Recipe
+from hello.hello import Hello
 from slackclient import SlackClient
 
 RTM_READ_DELAY = 0.5 # 0.5 second delay between reading from RTM
@@ -53,7 +54,7 @@ def handle_command(command, channel):
         base_command = commands[0]
         # This is where you start to implement more commands!
         if base_command in 'hi hello hey'.split():
-            response = 'Greetings, my friend! I hope you are well.'
+            response = Hello(commands).process_command()
         elif base_command == 'recipe':
             response = Recipe(commands).process_command()
 
