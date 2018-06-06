@@ -231,6 +231,45 @@
                 "Drain and discard the fat, but keep the solids (a combination of cooked down carrots and onions and pan drippings) to put over the ribs."   
             ],
             "notes": "Serve with baked potato (or roasted potatoes) and vegetable/salad."
+        },
+        {
+            "type": "main",
+            "name": "Roast Chicken (a/k/a Skinny Lemon Chicken)",
+            "quick": true,
+            "ingredients": [
+                {
+                    "name": "Whole chicken (high quality)",
+                    "amt": "1"
+                },
+                {
+                    "name": "Lemons",
+                    "amt": "2"
+                },
+                {
+                    "name": "Salt",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Freshly ground pepper",
+                    "amt": "To taste"
+                }
+            ],
+            "directions": [
+                "Preheat the oven to 350.",
+                "Rinse the chicken thoroughly, removing all extra fat.",
+                "Lean it on a plate or in the sink for 10 minutes to drain.",
+                "Pat the chicken dry.",
+                "Roll the lemons to bring up the juice. You can also microwave them for 30 seconds to help with this. Prick them all over with a fork and put them in the cavity of the chicken.",
+                "Seal the opening of the cavity with a toothpick and tie the legs together with twine.",
+                "Season the chicken all over with salt and pepper.",
+                "Put the chicken in the roasting pan, breast down.",
+                "Roast for 35 minutes.",
+                "Turn the chicken over (so it is breast up) and roast another 35 minutes.",
+                "Raise the oven temperature to 400 and roast for 20 minutes. This will brown it. (It will also spatter a lot.)",
+                "Carve and serve."
+            ],
+            "notes": "Ingredients matter a lot here. A regular chicken will work, but this is much, much better with a really good chicken. I like to use either a kosher chicken (Empire brand) or an organic chicken. The trick is to use a small one—under 4 lbs, and as close to 3 lbs. as you can find. The best lemons are the small skinny ones (hence the name) because they have the most juice. If all you can find are large ones with a thick skin (and not as much juice), you may want to cut them in half to allow as much juice as possible to come out. According to Ms. Hazan, this chicken is supposed to puff up like a balloon, making a fabulous presentation. It has never done that for me, but it always tastes wonderful—puffed or not. Pan juices are fabulous. Spoon them over the meat. I like to serve this with rice pilaf."
         }
+
     ]
 }

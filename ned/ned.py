@@ -4,6 +4,7 @@ import re
 import json
 from recipe.recipe import Recipe
 from hello.hello import Hello
+from flip.flip import Flip
 from slackclient import SlackClient
 
 RTM_READ_DELAY = 0.5 # 0.5 second delay between reading from RTM
@@ -57,6 +58,8 @@ def handle_command(command, channel):
             response = Hello(commands).process_command()
         elif base_command == 'recipe':
             response = Recipe(commands).process_command()
+        elif base_command == 'flip':
+            response = Flip(commands).process_command()
 
         send_response(channel, response)
     except Exception as e:
