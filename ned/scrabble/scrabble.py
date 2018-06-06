@@ -35,7 +35,7 @@ class Scrabble:
 
     def process_command(self):
         if len(self.commands) != 2:
-            return "Please enter one word so I can calculate it's Scrabble score!"
+            return "Please enter one word so I can calculate its Scrabble score!"
         score = self._calc_score(self.commands[1])
         if score is None:
             return "Hm, some of those letters don't seem to have scrabble values!"
