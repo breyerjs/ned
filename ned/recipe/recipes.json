@@ -269,6 +269,58 @@
                 "Carve and serve."
             ],
             "notes": "Ingredients matter a lot here. A regular chicken will work, but this is much, much better with a really good chicken. I like to use either a kosher chicken (Empire brand) or an organic chicken. The trick is to use a small one—under 4 lbs, and as close to 3 lbs. as you can find. The best lemons are the small skinny ones (hence the name) because they have the most juice. If all you can find are large ones with a thick skin (and not as much juice), you may want to cut them in half to allow as much juice as possible to come out. According to Ms. Hazan, this chicken is supposed to puff up like a balloon, making a fabulous presentation. It has never done that for me, but it always tastes wonderful—puffed or not. Pan juices are fabulous. Spoon them over the meat. I like to serve this with rice pilaf."
+        },
+        {
+            "type": "main",
+            "name": "Garlic Chicken with Artichokes and Mushrooms (from Craig Blunden)",
+            "quick": false,
+            "ingredients": [
+                {
+                    "name": "Minced garlic",
+                    "amt": "8 cloves"
+                },
+                {
+                    "name": "Butter",
+                    "amt": "0.75 cups"
+                },
+                {
+                    "name": "Chicken breasts, boned + pounded thin",
+                    "amt": "6"
+                },
+                {
+                    "name": "Salt + Pepper",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Olive oil",
+                    "amt": "2 tbs"
+                },
+                {
+                    "name": "Mushrooms, sliced",
+                    "amt": "0.25 lbs"
+                },
+                {
+                    "name": "Artichoke, canned in brine",
+                    "amt": "1 can"
+                },
+                {
+                    "name": "Dry sherry or other white wine",
+                    "amt": "2 tbs"
+                },
+                {
+                    "name": "Lemon juice",
+                    "amt": "2 tbs"
+                }
+            ],
+            "directions": [
+                "Mince 5 cloves of garlic and sauté in ½ cup melted butter.",
+                "Add chicken breasts and sprinkle with salt and pepper. Brown and remove to a warm plate.", 
+                "Add remaining butter and olive and remaining 3 cloves of garlic. Brown the garlic and toss in the mushrooms.",
+                "Add artichokes. Heat. Stir in the lemon juice and the wine.",
+                "Let thicken to desired consistency. Stir chicken back in to heat through."
+                
+            ],
+            "notes": "I now use chicken tenderloins, instead of whole breasts. They cook more quickly. (I find that the sliced chicken breasts dry out. Tenderloins seem to work better.) I use about 1 pound. Don’t worry about getting the perfect amount of garlic—more is better. You may want to increase the amount of wine and lemon juice (maybe to ¼ cup each). Just keep them the same amount of each. If you increase these amounts, you may need to take an extra few minutes to reduce them to the right consistency. I like to serve this with rice casserole."
         }
 
     ]
