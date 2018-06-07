@@ -19,6 +19,8 @@ class Recipe:
             return json.load(json_data)
 
     def process_command(self):
+        if len(self.commands) == 1: # no input
+            return self._handle_random()
         base_command = self.commands[1]
         if base_command == 'help':
             return HELP
@@ -35,7 +37,7 @@ class Recipe:
             if len(matching) == 0:
                 return "Shucks, I can't find any recipes with the course *" + self.commands[2] + "*"
         else:
-            matching = [recipe for recipe in self.recipes['food']]
+            matching = self.recipes['food']
         choice = random.choice(matching)
         return self._format_recipe_for_display(choice)
                 
