@@ -321,6 +321,52 @@
                 
             ],
             "notes": "I now use chicken tenderloins, instead of whole breasts. They cook more quickly. (I find that the sliced chicken breasts dry out. Tenderloins seem to work better.) I use about 1 pound. Don’t worry about getting the perfect amount of garlic—more is better. You may want to increase the amount of wine and lemon juice (maybe to ¼ cup each). Just keep them the same amount of each. If you increase these amounts, you may need to take an extra few minutes to reduce them to the right consistency. I like to serve this with rice casserole."
+        },        
+        {
+            "type": "side",
+            "name": "Sweet Potato Casserole with Marshmallows (from Mar-Mar, adapted by me)",
+            "quick": true,
+            "ingredients": [
+                {
+                    "name": "Sweet potatoes",
+                    "amt": "2 lbs"
+                },
+                {
+                    "name": "Sugar",
+                    "amt": "0.25 cups"
+                },
+                {
+                    "name": "Butter",
+                    "amt": "0.25 cups"
+                },
+                {
+                    "name": "Salt",
+                    "amt": "0.5 tsp"
+                },
+                {
+                    "name": "Sour cream",
+                    "amt": "1 cup"
+                },
+                {
+                    "name": "Mace",
+                    "amt": "0.5 tsp"
+                },
+                {
+                    "name": "Grated nutmet",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Marshmallows",
+                    "amt": "Enough"
+                }
+            ],
+            "directions": [
+                "Peel sweet potatoes, cut up (halves or quarters) and boil until they are very soft (easily pierced with a fork).",
+                "Drain the water and mash them, adding sour cream, sugar, butter, salt and spices.",
+                "Turn into a greased baking dish. Top with marshmallows.",
+                "Bake, uncovered, at 350 until the marshmallows brown on top."
+            ],
+            "notes": "Aunt Jane likes to add cinnamon too. I do the mashing/mixing in the stand mixer. You can also use a hand mixer. As you peel the potatoes, put them in the pot of water you’re going to boil them in so they don’t turn brown, which they will if they just sit in the air. You can make this up the day before, bring to room temperature, add marshmallows and bake when you want to serve them. Personally, I think they’re better, though, made the day you serve them."
         }
 
     ]

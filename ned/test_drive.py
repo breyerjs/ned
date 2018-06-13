@@ -1,5 +1,8 @@
-from hello.hello import Hello
+from karma.karma import Karma
+from json_utility.json_utility import JsonUtility
 
-commands = "hi there my friend".split()
+commands = "@jackson++".split()
 
-print(Hello(commands).process_command())
+ju = JsonUtility()
+
+print(Karma(commands, ju).process_command())

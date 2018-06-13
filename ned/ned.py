@@ -2,6 +2,7 @@ import os
 import time
 import re
 import json
+from json_utility.json_utility import JsonUtility
 from recipe.recipe import Recipe
 from hello.hello import Hello
 from flip.flip import Flip
@@ -13,12 +14,11 @@ MENTION_REGEX = '^<@(|[WU].+?)>(.*)'
 DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 
 def load_bot_auth_token():
-    with open('secrets.json') as json_data:
-        data = json.load(json_data)
-        token = data.get('bot_user_oauth_access_token')
-        if token is None:
-            print('Warning: could not find oauth token')
-        return token 
+    secrets = JsonUtility().load_json_into_dict('secrets.json')
+    token = secrets.get('bot_user_oauth_access_token')
+    if token is None:
+        print('Warning: could not find oauth token')
+    return token 
 
 # value is assigned after the bot starts up
 ned_id = None
@@ -93,9 +93,13 @@ if __name__ == "__main__":
         # Read bot's user ID by calling Web API method `auth.test`
         ned_id = slack_client.api_call("auth.test")["user_id"]
         while True:
-            command, channel = parse_bot_commands(slack_client.rtm_read())
-            if command:
-                handle_command(command, channel)
-            time.sleep(RTM_READ_DELAY)
+            try:
+                command, channel = parse_bot_commands(slack_client.rtm_read())
+                if command:
+                    handle_command(command, channel)
+                time.sleep(RTM_READ_DELAY)
+            except:
+                print("We hit one of those errors that usually makes ned crash")
+                time.sleep(20)
     else:
         print("Ruh roh! Connection failed. Exception traceback printed above.")
