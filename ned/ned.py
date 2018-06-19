@@ -7,10 +7,10 @@ from recipe.recipe import Recipe
 from hello.hello import Hello
 from flip.flip import Flip
 from scrabble.scrabble import Scrabble
+from listener.listener import Listener
 from slackclient import SlackClient
 
 RTM_READ_DELAY = 0.5 # 0.5 second delay between reading from RTM
-MENTION_REGEX = '^<@(|[WU].+?)>(.*)'
 DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 
 def load_bot_auth_token():
@@ -24,35 +24,22 @@ def load_bot_auth_token():
 ned_id = None
 slack_client = SlackClient(load_bot_auth_token())
 
-def parse_bot_commands(slack_events):
+def _send_response(channel, response):
     """
-        Parses a list of events coming from the Slack RTM API to find bot commands.
-        If a bot command is found, this function returns a tuple of command and channel.
-        If its not found, then this function returns None, None.
+        Sends the response back to the channel
     """
-    for event in slack_events:
-        if event["type"] == "message" and not "subtype" in event:
-            user_id, message = parse_direct_mention(event["text"])
-            if user_id == ned_id:
-                return message, event["channel"]
-    return None, None
+    slack_client.api_call(
+        "chat.postMessage",
+        channel=channel,
+        text=response or DEFAULT_RESPONSE
+    )
 
-def parse_direct_mention(message_text):
+def _get_response(commands, command_type):
     """
-        Finds a direct mention (a mention that is at the beginning) in message text
-        and returns the user ID which was mentioned. If there is no direct mention, returns None
-    """
-    matches = re.search(MENTION_REGEX, message_text)
-    # the first group contains the username, the second group contains the remaining message
-    return (matches.group(1), matches.group(2).strip()) if matches else (None, None)
-
-def handle_command(command, channel):
-    """
-        Executes bot command if the command is known
+        Finds the correct response given some ned command
     """
     response = None
     try:
-        commands = process_commands(command)
         base_command = commands[0]
         # This is where you start to implement more commands!
         if base_command in 'hi hello hey'.split():
@@ -63,39 +50,23 @@ def handle_command(command, channel):
             response = Flip(commands).process_command()
         elif base_command == 'scrabble':
             response = Scrabble(commands).process_command()
-
-        send_response(channel, response)
+        return response
     except Exception as e:
         print(e)
         response = 'Great Scott! I seem to have encountered an error :('
-        send_response(channel, response)
-
-
-def send_response(channel, response):
-    # Sends the response back to the channel
-    slack_client.api_call(
-        "chat.postMessage",
-        channel=channel,
-        text=response or DEFAULT_RESPONSE
-    )
-
-def process_commands(commands):
-    """
-        Takes in a string of the commands.
-        Cleans and returns them
-    """
-    processed = commands.strip().lower().split()
-    return processed
+        return response
 
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False, auto_reconnect=True):
         print("Ned is connected and running!")
         # Read bot's user ID by calling Web API method `auth.test`
         ned_id = slack_client.api_call("auth.test")["user_id"]
+        slack_listener = Listener(slack_client, ned_id)
         while True:
-            command, channel = parse_bot_commands(slack_client.rtm_read())
-            if command:
-                handle_command(command, channel)
+            commands, channel, command_type = slack_listener.listen(slack_client.rtm_read())
+            if commands:
+                print(commands)
+                _send_response(channel, _get_response(commands, command_type))
             time.sleep(RTM_READ_DELAY)
     else:
         print("Ruh roh! Connection failed. Exception traceback printed above.")
