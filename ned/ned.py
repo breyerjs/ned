@@ -3,15 +3,24 @@ import time
 import re
 import json
 from json_utility.json_utility import JsonUtility
-from recipe.recipe import Recipe
 from hello.hello import Hello
 from flip.flip import Flip
-from scrabble.scrabble import Scrabble
+from json_utility.json_utility import JsonUtility
+from karma.karma import Karma
 from listener.listener import Listener
+from listener.listener import send_response
+from recipe.recipe import Recipe
+from scrabble.scrabble import Scrabble
 from slackclient import SlackClient
 
+COMMANDS = """```
+Hello
+Flip
+Recipe
+Scrabble```
+"""
+
 RTM_READ_DELAY = 0.5 # 0.5 second delay between reading from RTM
-DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 
 def load_bot_auth_token():
     secrets = JsonUtility().load_json_into_dict('secrets.json')
@@ -23,16 +32,6 @@ def load_bot_auth_token():
 # value is assigned after the bot starts up
 ned_id = None
 slack_client = SlackClient(load_bot_auth_token())
-
-def _send_response(channel, response):
-    """
-        Sends the response back to the channel
-    """
-    slack_client.api_call(
-        "chat.postMessage",
-        channel=channel,
-        text=response or DEFAULT_RESPONSE
-    )
 
 def _get_response(commands, command_type):
     """
@@ -50,6 +49,8 @@ def _get_response(commands, command_type):
             response = Flip(commands).process_command()
         elif base_command == 'scrabble':
             response = Scrabble(commands).process_command()
+        elif base_command in 'commands help'.split():
+            return COMMANDS
         return response
     except Exception as e:
         print(e)
@@ -59,14 +60,12 @@ def _get_response(commands, command_type):
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False, auto_reconnect=True):
         print("Ned is connected and running!")
-        # Read bot's user ID by calling Web API method `auth.test`
-        ned_id = slack_client.api_call("auth.test")["user_id"]
-        slack_listener = Listener(slack_client, ned_id)
+        karma_listener = Karma(JsonUtility())
+        slack_listener = Listener(slack_client, karma_listener)
         while True:
             commands, channel, command_type = slack_listener.listen(slack_client.rtm_read())
             if commands:
-                print(commands)
-                _send_response(channel, _get_response(commands, command_type))
+                send_response(slack_client, channel, _get_response(commands, command_type))
             time.sleep(RTM_READ_DELAY)
     else:
         print("Ruh roh! Connection failed. Exception traceback printed above.")

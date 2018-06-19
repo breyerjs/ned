@@ -8,12 +8,11 @@ class Karma:
         This needs to work differently than the other commands. 
         It needs to run passively over all messages. 
     """
-    def __init__(self, commands, json_utility):
-        self.commands = commands
+    def __init__(self, json_utility):
         self.json_utility = json_utility
  
-    def process_command(self):
-        karma_changed_entities = [word for word in self.commands if 
+    def process_commands(self, commands):
+        karma_changed_entities = [word for word in commands if 
             word.endswith('++') 
             or word.endswith('--') 
             or word.endswith('+-') 

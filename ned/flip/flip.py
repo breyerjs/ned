@@ -44,7 +44,7 @@ class Flip:
     
     def map_to_upside_down(self, string):
         output = ''
-        for char in string:
+        for char in reversed(string):
             if char in UPSIDE_DOWN:
                 output += UPSIDE_DOWN[char]
             else:

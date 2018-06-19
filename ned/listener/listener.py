@@ -1,19 +1,21 @@
 import re
 from enum import Enum
 
+DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 MENTION_REGEX = '^<@(|[WU].+?)>(.*)'
 NED_REGEX = '^([Nn]ed )(.*)'
-NED_COMMAND_TYPE = 'ned'
+KARMA_REGEX = r'\+\+|\--|\+-|\-\+'
 NO_COMMANDS = (None, None, None)
 
 class CommandTypes(Enum):
     NED = 'ned'
-    KARMA = 'karma'
 
 class Listener:
-    def __init__(self, slack_client, ned_id):
-        self.ned_id = ned_id
+    def __init__(self, slack_client, karma_client):
         self.slack_client = slack_client
+        # Read bot's user ID by calling Web API method `auth.test`
+        self.ned_id = slack_client.api_call("auth.test")["user_id"]      
+        self.karma_client = karma_client  
 
     def listen(self, slack_events):
         """
@@ -22,12 +24,24 @@ class Listener:
         """
         for event in slack_events:
             if event["type"] == "message" and not "subtype" in event:
-                commands = self._get_ned_commands_or_None(event['text'])
-                if commands is not None:
+                # deal with karma before looking for ned commands
+                self._handle_karma(event)
+                # now handle ned commands
+                ned_commands = self._get_ned_commands_or_None(event['text'])
+                if ned_commands is not None:
                     command_type = CommandTypes.NED
-                    return (commands, event["channel"], command_type)
-                # TODO Karma goes here
+                    return (ned_commands, event["channel"], command_type)
         return NO_COMMANDS
+
+    def _handle_karma(self, event):
+        """ 
+            Checks for karmatic mentions. If it finds them, it does some work and sends a response.
+        """
+        text = event['text']
+        karma_markers = re.search(KARMA_REGEX, text)
+        if karma_markers is not None:
+            response = self.karma_client.process_commands(text.split())
+            send_response(self.slack_client, event['channel'], response)
 
     def _get_ned_commands_or_None(self, message_text):
         """
@@ -72,3 +86,13 @@ class Listener:
                 if user_id == self.ned_id:
                     return message, event["channel"]
         return None, None
+
+def send_response(slack_client, channel, response):
+    """
+        Sends the response back to the channel
+    """
+    slack_client.api_call(
+        "chat.postMessage",
+        channel=channel,
+        text=response or DEFAULT_RESPONSE
+    )
