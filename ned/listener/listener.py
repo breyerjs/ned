@@ -41,7 +41,8 @@ class Listener:
         karma_markers = re.search(KARMA_REGEX, text)
         if karma_markers is not None:
             response = self.karma_client.process_commands(text.split())
-            send_response(self.slack_client, event['channel'], response)
+            if response is not None:
+                send_response(self.slack_client, event['channel'], response)
 
     def _get_ned_commands_or_None(self, message_text):
         """
