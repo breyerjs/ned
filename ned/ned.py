@@ -17,7 +17,8 @@ COMMANDS = """```
 Hello
 Flip
 Recipe
-Scrabble```
+Scrabble
+```
 """
 
 RTM_READ_DELAY = 0.5 # 0.5 second delay between reading from RTM

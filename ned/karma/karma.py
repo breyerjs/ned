@@ -27,6 +27,7 @@ class Karma:
     
     def _process_name(self, entity):
         entity = entity.strip('@+-') # remove all mentions, plusses and minuses
+        entity = entity.lower()
         return entity
 
     def _perform_update(self, entity, data_file):
