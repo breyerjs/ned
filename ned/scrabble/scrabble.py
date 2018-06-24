@@ -1,3 +1,5 @@
+from utility.style_utility import bold, italics, quoted, indent
+
 POINTS = {
     'a': 1,
     'b': 3,
@@ -39,7 +41,7 @@ class Scrabble:
         score = self._calc_score(self.commands[1])
         if score is None:
             return "Hm, some of those letters don't seem to have scrabble values."
-        return "The score for *" + self.commands[1] + "* is: " + str(score)
+        return "The score for " + bold(self.commands[1]) + " is: " + str(score)
     
     def _calc_score(self, word):
         total = 0

@@ -30,7 +30,7 @@ class Commands:
                 ie. `jackson++ whoah` returns None
         """
         if commands[0] == NED_NAME and len(commands) > 1:
-            return commands[1:]
+            return commands[1:] # removes the 'ned' at the beginning
         else:
             return None
 

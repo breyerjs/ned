@@ -1,4 +1,3 @@
-import json
 import random
 from utility.json_utility import load_json_into_dict
 from utility.style_utility import bold, italics, quoted, indent
@@ -11,6 +10,7 @@ HELP = """
 """
 
 RECIPE_PATH = './recipe/recipes.json'
+
 class Recipe:
     def __init__(self, commands):
         self.commands = commands

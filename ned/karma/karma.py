@@ -3,6 +3,7 @@ import os
 from utility.json_utility import load_json_into_dict
 from utility.json_utility import write_to_file
 from utility.json_utility import load_or_create_file
+from utility.style_utility import bold, italics, quoted, indent
 
 FILENAME = './karma/karma.json'
 INITIAL_STRUCTURE = {}
@@ -53,6 +54,6 @@ class Karma:
             cleaned_entity = self._process_name(entity)
             if cleaned_entity == '':
                 continue
-            response.append(cleaned_entity + "'s karma is now at *" + str(data_file[cleaned_entity]) + '*')
+            response.append(cleaned_entity + "'s karma is now at " + bold(str(data_file[cleaned_entity])))
         # this will be '' if there were no entities besides, eg, ' ++ '
         return '\n'.join(response)
