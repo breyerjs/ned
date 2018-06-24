@@ -60,8 +60,7 @@ def _get_response(commands, command_type):
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False, auto_reconnect=True):
         print("Ned is connected and running!")
-        karma_listener = Karma()
-        slack_listener = Listener(slack_client, karma_listener)
+        slack_listener = Listener(slack_client)
         while True:
             commands, channel, command_type = slack_listener.listen(slack_client.rtm_read())
             if commands:

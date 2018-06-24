@@ -1,5 +1,6 @@
 import re
-from enum import Enum
+from enum import Enum 
+from karma.karma import Karma
 
 DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 MENTION_REGEX = '^<@(|[WU].+?)>(.*)'
@@ -11,11 +12,11 @@ class CommandTypes(Enum):
     NED = 'ned'
 
 class Listener:
-    def __init__(self, slack_client, karma_client):
+    def __init__(self, slack_client):
         self.slack_client = slack_client
         # Read bot's user ID by calling Web API method `auth.test`
         self.ned_id = slack_client.api_call("auth.test")["user_id"]      
-        self.karma_client = karma_client  
+        self.karma_client = Karma()  
 
     def listen(self, slack_events):
         """
