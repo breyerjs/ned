@@ -1,8 +1,5 @@
-from karma.karma import Karma
-from json_utility.json_utility import JsonUtility
+from recipe.recipe import Recipe
 
-commands = "@jackson++".split()
+commands = "recipe lamb".split()
 
-ju = JsonUtility()
-
-print(Karma(commands, ju).process_command())
+print(Recipe(commands).process_command())

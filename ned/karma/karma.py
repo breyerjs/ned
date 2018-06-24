@@ -1,5 +1,9 @@
 import os
 
+from utility.json_utility import load_json_into_dict
+from utility.json_utility import write_to_file
+from utility.json_utility import load_or_create_file
+
 FILENAME = './karma/karma.json'
 INITIAL_STRUCTURE = {}
 
@@ -7,10 +11,7 @@ class Karma:
     """
         This needs to work differently than the other commands. 
         It needs to run passively over all messages. 
-    """
-    def __init__(self, json_utility):
-        self.json_utility = json_utility
- 
+    """ 
     def process_commands(self, commands):
         karma_changed_entities = [word for word in commands if 
             word.endswith('++') 
@@ -18,7 +19,7 @@ class Karma:
             or word.endswith('+-') 
             or word.endswith('-+')
         ]
-        data_file = self.json_utility.load_or_create_file(FILENAME, INITIAL_STRUCTURE) 
+        data_file = load_or_create_file(FILENAME, INITIAL_STRUCTURE) 
         for entity in karma_changed_entities:
             self._perform_update(entity, data_file)        
         # build and return the messaging
@@ -39,7 +40,7 @@ class Karma:
             self._add_or_update_name(data_file, cleaned_entity, 1)
         elif modifier == '--':
             self._add_or_update_name(data_file, cleaned_entity, -1)
-        self.json_utility.write_to_file(FILENAME, data_file)
+        write_to_file(FILENAME, data_file)
 
     def _add_or_update_name(self, data_file, entity, amt_to_add):
         if entity not in data_file:

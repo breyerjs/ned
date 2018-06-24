@@ -2,10 +2,9 @@ import os
 import time
 import re
 import json
-from json_utility.json_utility import JsonUtility
+from utility.json_utility import load_json_into_dict
 from hello.hello import Hello
 from flip.flip import Flip
-from json_utility.json_utility import JsonUtility
 from karma.karma import Karma
 from listener.listener import Listener
 from listener.listener import send_response
@@ -24,7 +23,7 @@ Scrabble
 RTM_READ_DELAY = 0.5 # 0.5 second delay between reading from RTM
 
 def load_bot_auth_token():
-    secrets = JsonUtility().load_json_into_dict('secrets.json')
+    secrets = load_json_into_dict('secrets.json')
     token = secrets.get('bot_user_oauth_access_token')
     if token is None:
         print('Warning: could not find oauth token')
@@ -61,7 +60,7 @@ def _get_response(commands, command_type):
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False, auto_reconnect=True):
         print("Ned is connected and running!")
-        karma_listener = Karma(JsonUtility())
+        karma_listener = Karma()
         slack_listener = Listener(slack_client, karma_listener)
         while True:
             commands, channel, command_type = slack_listener.listen(slack_client.rtm_read())

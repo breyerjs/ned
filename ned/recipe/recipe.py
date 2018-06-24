@@ -1,5 +1,7 @@
 import json
 import random
+from utility.json_utility import load_json_into_dict
+from utility.style_utility import bold, italics, quoted, indent
 
 HELP = """
 `ned recipe help`: show this message
@@ -8,15 +10,11 @@ HELP = """
 `ned recipe list <course>: list all recipes, optionally matching <course>`
 """
 
+RECIPE_PATH = './recipe/recipes.json'
 class Recipe:
     def __init__(self, commands):
         self.commands = commands
-        self.recipes = self._load_recipes()
-    
-    def _load_recipes(self):
-        # path is relative to ned.py, not this file
-        with open('./recipe/recipes.json') as json_data:
-            return json.load(json_data)
+        self.recipes = load_json_into_dict(RECIPE_PATH)
 
     def process_command(self):
         if len(self.commands) == 1: # no input
@@ -50,13 +48,13 @@ class Recipe:
             return self._format_recipe_for_display(matching[0])
 
     def _format_recipe_for_display(self, recipe):
-        s = '=== *'+recipe['name']+'* ==='
-        s += '\n\t_Ingredients_'
+        s = '=== '+bold(recipe['name'])+' ==='
+        s += '\n'+indent(italics('Ingredients'))
         for ingredient in recipe['ingredients']:
-            s += '\n\t\t'+ingredient['amt'] + ' ' + ingredient['name']
-        s += '\n\t_Directions_'
+            s += '\n'+indent(ingredient['amt'] + ' ' + ingredient['name'], 2)
+        s += '\n'+ indent(italics('Directions'))
         for i, direction in enumerate(recipe['directions']):
-            s += '\n\t\t' + str(i+1) + '. ' + direction
-        s += '\n\t_Notes_\n'
-        s += '>' + recipe['notes']
+            s += '\n' + indent(str(i+1) + '. ' + direction, 2)
+        s += '\n' + indent(italics('Notes')) + '\n'
+        s += quoted(recipe['notes'])
         return s
