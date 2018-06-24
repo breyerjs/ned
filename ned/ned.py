@@ -12,6 +12,7 @@ from recipe.recipe import Recipe
 from scrabble.scrabble import Scrabble
 from slackclient import SlackClient
 
+DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 COMMANDS = """```
 Hello
 Flip
@@ -33,38 +34,48 @@ def load_bot_auth_token():
 ned_id = None
 slack_client = SlackClient(load_bot_auth_token())
 
-def _get_response(commands, command_type):
+def _get_responses(commands):
     """
         Finds the correct response given some ned command
     """
-    response = None
+    responses = []
     try:
-        base_command = commands[0]
-        # This is where you start to implement more commands!
-        if base_command in 'hi hello hey'.split():
-            response = Hello(commands).process_command()
-        elif base_command == 'recipe':
-            response = Recipe(commands).process_command()
-        elif base_command == 'flip':
-            response = Flip(commands).process_command()
-        elif base_command == 'scrabble':
-            response = Scrabble(commands).process_command()
-        elif base_command in 'commands help'.split():
-            return COMMANDS
-        return response
+        # Direct command to ned
+        if commands.ned_command:
+            base_command = commands.ned_command[0]
+            if base_command in 'hi hello hey'.split():
+                ned_response = Hello(commands.ned_command).process_command()
+            elif base_command == 'recipe':
+                ned_response = Recipe(commands.ned_command).process_command()
+            elif base_command == 'flip':
+                ned_response = Flip(commands.ned_command).process_command()
+            elif base_command == 'scrabble':
+                ned_response = Scrabble(commands.ned_command).process_command()
+            elif base_command in 'commands help'.split():
+                ned_response = COMMANDS
+            else:
+                ned_response = DEFAULT_RESPONSE
+            responses.append(ned_response)
+        # Any karmatic changes that have happened
+        if commands.karmatic_entities:
+            karma_response = Karma().process_commands(commands.karmatic_entities)
+            responses.append(karma_response)
+        return responses
     except Exception as e:
         print(e)
         response = 'Great Scott! I seem to have encountered an error :('
-        return response
+        return [response]
 
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False, auto_reconnect=True):
         print("Ned is connected and running!")
         slack_listener = Listener(slack_client)
         while True:
-            commands, channel, command_type = slack_listener.listen(slack_client.rtm_read())
-            if commands:
-                send_response(slack_client, channel, _get_response(commands, command_type))
+            commands = slack_listener.listen(slack_client.rtm_read())
+            if commands and commands.work_to_do:
+                responses = _get_responses(commands)
+                for response in responses:
+                    send_response(slack_client, commands.event['channel'], response)
             time.sleep(RTM_READ_DELAY)
     else:
         print("Ruh roh! Connection failed. Exception traceback printed above.")
