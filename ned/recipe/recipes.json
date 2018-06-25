@@ -367,7 +367,160 @@
                 "Bake, uncovered, at 350 until the marshmallows brown on top."
             ],
             "notes": "Aunt Jane likes to add cinnamon too. I do the mashing/mixing in the stand mixer. You can also use a hand mixer. As you peel the potatoes, put them in the pot of water you’re going to boil them in so they don’t turn brown, which they will if they just sit in the air. You can make this up the day before, bring to room temperature, add marshmallows and bake when you want to serve them. Personally, I think they’re better, though, made the day you serve them."
+        },
+        {
+            "type": "main",
+            "name": "Rack of Lamb Encrusted with Parmesan Cheese",
+            "quick": false,
+            "ingredients": [
+                {
+                    "name": "Rack of lamb (frenched)",
+                    "amt": "2"
+                },
+                {
+                    "name": "Extra virgin olive oil",
+                    "amt": "1 tbs"
+                },
+                {
+                    "name": "Salt",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Fresh ground black pepper",
+                    "amt": "To taste"
+                },
+                {
+                    "name": "Chopped rosemary",
+                    "amt": "2 tsp"
+                },
+                {
+                    "name": "Freshly grated parmesan Reggiano",
+                    "amt": "3 tbs"
+                },
+                {
+                    "name": "Plain fine dry breadcrumbs",
+                    "amt": "1 tbs"
+                }
+            ],
+            "directions": [
+                "Place racks of lamb in baking dish, pour oil over them and spread it over the lamb with your fingers or a basting brush. Season with salt and pepper, then sprinkle with the rosemary.",
+                "Put the lamb in the upper level of the preheated oven  and bake for 35 minutes for medium-rare. (Cook it 5 minutes less for rare, and 5 minutes more for medium.)",
+                "Mix the parmesan and breadcrumbs on a plate large enough to hold the racks of lamb.",
+                "When you have taken the meat out of the oven, raise the temperature to 450.",
+                "Grasp one rack of lamb by the ribs with a potholder (or a tongs), place it on the breadcrumb/cheese mixture, and turn to coat all sides. Repeat with the second rack. Put both racks back in the pan (helps to drain off the fat before doing this). Sprinkle any remaining breadcrumb mixture over the lamb. Return pan to oven and bake for 5 more minutes.",
+                "Take the lamb out of the oven, cut into chops and serve at once."
+            ],
+            "notes": "OK. More things to note: this is the original recipe. I used this recipe, but only used one rack of lamb, so I guess I got a lot more crust. If I were going to do two racks, I might double the crust part of the recipe. A rack yields 8-9 chops (or so it seemed). This was enough for two of us, but you might want more if you have a big eater."
+        },
+        {
+            "type": "side",
+            "name": "Cranberry relish",
+            "quick": true,
+            "ingredients": [
+                {
+                    "name": "Water",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Orange juice",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Sugar",
+                    "amt": "0.75 cups"
+                },
+                {
+                    "name": "Fresh cranberries",
+                    "amt": "2 cups"
+                },
+                {
+                    "name": "Fresh organe peel, grated",
+                    "amt": "To taste"
+                }
+            ],
+            "directions": [
+                "Combine water, OJ, and sugar in a large glass (pyrex) casserole).",
+                "Cover and bring to a boil in the microwave.",
+                "Add berries and grated peel and continue microwaving on high until the berries pop.",
+                "Cool and refrigerate."
+            ],
+            "notes": "This will seem thin when first cooked, but will thicken as it cools. Make sure to use a large, covered casserole. This will boil up (and over!) as it cooks."
+        },
+        {
+            "type": "dessert",
+            "name": "Apple crisp",
+            "quick": true,
+            "ingredients": [
+                {
+                    "name": "Apples, peeled and sliced (not too thin)",
+                    "amt": "8"
+                },
+                {
+                    "name": "Water",
+                    "amt": "0.25 cups"
+                },
+                {
+                    "name": "Sugar",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Flour (crust)",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Sugar (crust)",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Graham cracker crumbs (crust)",
+                    "amt": "0.5 cups"
+                },
+                {
+                    "name": "Cinnamon (crust)",
+                    "amt": "1 tsp"
+                },
+                {
+                    "name": "Melted butter (crust)",
+                    "amt": "0.5 cups"
+                }
+            ],
+            "directions": [
+                "Preheat oven to 350.",
+                "Put apples in baking dish, sprinkle with sugar and water and spread with the  crust.",
+                "Bake at 350 for one hour."
+            ],
+            "notes": "Make sure to use cooking apples (for example, Granny Smiths). Red Delicious are lovely, but too soft and too mild for this. Generally I omit the water. The apples get mushy enough without it. About the crust—which is everyone’s favorite part—this is the original recipe. You can double the crust recipe, but sometimes it doesn’t really bake up properly if you do that (the crust doesn’t bake thoroughly.) Mar-Mar uses a deep baking dish so the crust covers the whole top and presses down on the crust to condense it a little. This method seems to work best. As you get used to making this, you can play around with the number of apples you use. It really doesn’t have to be 8. I use enough to mostly fill the baking dish I’m using. Serve with vanilla ice cream."
+        },
+        {
+            "type": "dessert",
+            "name": "Blueberry cobbler",
+            "quick": true,
+            "ingredients": [
+                {
+                    "name": "Bisquick",
+                    "amt": "1 cup"
+                },
+                {
+                    "name": "Sugar",
+                    "amt": "0.75 cups"
+                },
+                {
+                    "name": "Butter",
+                    "amt": "Some"
+                },
+                {
+                    "name": "Blueberries",
+                    "amt": "1 pint"
+                }
+            ],
+            "directions": [
+                "Preheat oven to 400.",
+                "Put berries in the bottom of a casserole.",
+                "Mix Bisquik and the sugar and cover the berries with the mixture.",
+                "Dot all over with butter.",
+                "Bake at 400 for one hour."
+            ],
+            "notes": "You can use more berries if you have them. The goal is to cover the top with the Bisquik/ sugar mixture. Don’t skimp on the butter—use a lot. Watch this at the end of the baking time. It can go from done to overdone very quickly. Serve with vanilla ice cream."
         }
-
     ]
 }
