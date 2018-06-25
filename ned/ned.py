@@ -1,6 +1,5 @@
 import os
 import time
-import re
 import json
 from utility.json_utility import load_json_into_dict
 from hello.hello import Hello
@@ -13,6 +12,7 @@ from scrabble.scrabble import Scrabble
 from slackclient import SlackClient
 
 DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
+
 COMMANDS = """```
 Hello
 Flip
@@ -36,7 +36,7 @@ slack_client = SlackClient(load_bot_auth_token())
 
 def _get_responses(commands):
     """
-        Finds the correct response given some ned command
+        Finds the correct response given some set of commands
     """
     responses = []
     try:
