@@ -18,8 +18,4 @@ class Hello:
         return self._randomize_greeting()
 
     def _randomize_greeting(self):
-        """
-            TODO:
-                - This should choose and return a random greeting
-        """
         return random.choice(GREETINGS)
