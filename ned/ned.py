@@ -43,7 +43,7 @@ def _get_responses(commands):
         # Direct command to ned
         if commands.ned_command:
             base_command = commands.ned_command[0]
-            if base_command in 'hi hello hey'.split():
+            if base_command in ['hi', 'hello', 'hey', 'kamusta', 'heya', 'howdy']:
                 ned_response = Hello(commands.ned_command).process_command()
             elif base_command == 'recipe':
                 ned_response = Recipe(commands.ned_command).process_command()
