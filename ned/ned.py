@@ -9,6 +9,7 @@ from listener.listener import Listener
 from listener.listener import send_response
 from recipe.recipe import Recipe
 from scrabble.scrabble import Scrabble
+from shades.shades import Shades
 from slackclient import SlackClient
 
 DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
@@ -51,6 +52,8 @@ def _get_responses(commands):
                 ned_response = Flip(commands.ned_command).process_command()
             elif base_command == 'scrabble':
                 ned_response = Scrabble(commands.ned_command).process_command()
+            elif base_command == 'shades':
+                ned_response = Shades(commands.ned_command).process_command()
             elif base_command in 'commands help'.split():
                 ned_response = COMMANDS
             else:
