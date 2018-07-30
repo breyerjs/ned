@@ -29,7 +29,7 @@ class Commands:
                 ie. `ned hi` returns ['hi']
                 ie. `jackson++ whoah` returns None
         """
-        if commands[0] == NED_NAME and len(commands) > 1:
+        if commands and commands[0] == NED_NAME and len(commands) > 1:
             return commands[1:] # removes the 'ned' at the beginning
         else:
             return None
