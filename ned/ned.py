@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 import time
 import json
@@ -19,6 +21,7 @@ Hello
 Flip
 Recipe
 Scrabble
+Shades
 ```
 """
 
