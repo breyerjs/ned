@@ -1,5 +1,9 @@
+import random
+
 TABLE = '┻━┻'
 FLIPPER = '(╯°□°）╯︵ '
+FLIPPER2= '(╯ಠ益ಠ）╯︵'
+
 UPSIDE_DOWN = {
     'a': 'ɐ',
     'b': 'q',
@@ -34,14 +38,14 @@ class Flip:
         self.commands = commands
 
     def process_command(self):
-        return FLIPPER + self.get_suffix()
+        return random.choice([FLIPPER, FLIPPER2]) + self.get_suffix()
 
     def get_suffix(self):
         if len(self.commands) == 1:
             return TABLE
         else:
             return self.map_to_upside_down(' '.join(self.commands[1:]))
-    
+
     def map_to_upside_down(self, string):
         output = ''
         for char in reversed(string):

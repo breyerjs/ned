@@ -7,6 +7,7 @@ from flip.flip import Flip
 from karma.karma import Karma
 from listener.listener import Listener
 from listener.listener import send_response
+from love.love import Love
 from recipe.recipe import Recipe
 from scrabble.scrabble import Scrabble
 from shades.shades import Shades
@@ -15,8 +16,9 @@ from slackclient import SlackClient
 DEFAULT_RESPONSE = 'A thousand pardons. What you ask is beyond my skill.'
 
 COMMANDS = """```
-Hello
 Flip
+Hello
+Love
 Recipe
 Scrabble
 Shades
@@ -51,6 +53,8 @@ def _get_responses(commands):
                 ned_response = Recipe(commands.ned_command).process_command()
             elif base_command == 'flip':
                 ned_response = Flip(commands.ned_command).process_command()
+            elif base_command == 'love':
+                ned_response = Love(commands.ned_command).process_command()
             elif base_command == 'scrabble':
                 ned_response = Scrabble(commands.ned_command).process_command()
             elif base_command == 'shades':
